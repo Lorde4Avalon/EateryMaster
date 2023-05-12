@@ -127,11 +127,14 @@ export const useUserStore = defineStore({
       const userInfo = await getUserInfo()
       const { roles = [] } = userInfo
       if (isArray(roles)) {
-        const roleList = roles.map((item) => item.value) as RoleEnum[]
+        const roleList = roles.map((item) => item) as unknown as RoleEnum[]
         this.setRoleList(roleList)
       } else {
         userInfo.roles = []
         this.setRoleList([])
+      }
+      if (!userInfo.realName) {
+        userInfo['realName'] = userInfo.username
       }
       this.setUserInfo(userInfo)
       return userInfo

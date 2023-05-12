@@ -16,7 +16,7 @@ export interface RegisterParams {
 }
 
 export interface RoleInfo {
-  roleName: string
+  // roleName: string
   value: string
 }
 

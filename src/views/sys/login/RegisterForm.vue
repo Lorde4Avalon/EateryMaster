@@ -85,12 +85,17 @@
     if (!data) return
     try {
       const res = await registerApi(data, 'none')
-      if (res) {
+      if (res.code !== 0) {
         notification.success({
-          message: '注册成功',
-          description: '请登录',
+          message: t('sys.login.registerSuccessTitle'),
+          description: t('sys.login.registerSuccessDesc'),
         })
         handleBackLogin()
+      } else {
+        notification.error({
+          message: t('sys.login.registerFailedTitle'),
+          description: res.msg,
+        })
       }
     } catch (error) {
       console.log(error)

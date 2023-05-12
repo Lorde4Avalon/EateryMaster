@@ -7,7 +7,7 @@
 
 ## 简介
 
-精简 EateryMaster Admin 管理后台模板基于 [vue-vben-admin](https://github.com/vbenjs/vue-vben-admin/tree/thin）开发
+精简 EateryMaster Admin 管理后台模板基于 [vue-vben-admin](https://github.com/vbenjs/vue-vben-admin/tree/thin)开发
 
 ## 特性
 
@@ -24,26 +24,25 @@
 - 获取项目代码
 
 ```bash
-git clone https://github.com/anncwb/vue-vben-admin.git
+git clone https://github.com/Lorde4Avalon/EateryMaster.git
 ```
 
 - 安装依赖
 
 ```bash
-cd vue-vben-admin
-git checkout thin
-pnpm install
+cd EateryMaster
+yarn
 
 ```
 
 - 运行
 
 ```bash
-pnpm serve
+yarn serve
 ```
 
 - 打包
 
 ```bash
-pnpm build
+yarn build
 ```

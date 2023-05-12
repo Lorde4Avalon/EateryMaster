@@ -75,6 +75,9 @@ export default {
     // notify
     loginSuccessTitle: '登录成功',
     loginSuccessDesc: '欢迎回来',
+    registerSuccessTitle: '注册成功',
+    registerFailedTitle: '注册失败',
+    registerSuccessDesc: '账号注册成功',
 
     // placeholder
     accountPlaceholder: '请输入账号',
