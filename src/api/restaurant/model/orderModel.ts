@@ -4,17 +4,23 @@ import { BasicFetchResult } from '../../model/baseModel'
  */
 export interface OrderModel {
   id?: string | number
+  userId: string | number
+  orderTime: string
+  amount: number
+  userName: string
+  boardId: string | number
+  storeId: string | number
+  detailSet: OrderDetailModel[]
+}
+
+export interface OrderDetailModel {
+  id?: string | number
   name: string
   image?: string
-  userId: string | number
-  dishId: string | number
   dishFlavor: string
   number: number
   amount: number
-  status: string | number
-  boardId: string | number
-  storeId: string | number
-  createTime: string | null
+  dishId: string | number
 }
 
 /**

@@ -15,11 +15,20 @@ const order: AppRouteModule = {
   },
   children: [
     {
-      path: 'all',
+      path: 'all/:id',
       name: 'orderAll',
       component: () => import('/@/views/order/index.vue'),
       meta: {
         title: t('routes.order.orderAll'),
+      },
+    },
+    {
+      path: 'detail/:storeId/:orderId',
+      name: 'orderDetail',
+      component: () => import('/@/views/order/details/index.vue'),
+      meta: {
+        title: t('routes.order.orderDetail'),
+        hideMenu: true,
       },
     },
   ],

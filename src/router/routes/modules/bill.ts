@@ -12,6 +12,7 @@ const bill: AppRouteModule = {
     orderNo: 12,
     icon: 'ion:grid-outline',
     title: t('routes.bill.bill'),
+    hideMenu: true,
   },
   children: [
     {

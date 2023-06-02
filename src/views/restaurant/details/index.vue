@@ -26,6 +26,14 @@
             <span class="text-2xl">300</span>
           </div>
         </div>
+        <a
+          @click="
+            () => {
+              router.push(`/order/all/${id}`)
+            }
+          "
+          >全部订单</a
+        >
       </div>
     </template>
     <div class="p-4 w-full flex flex-col lg:flex-row gap-10">
