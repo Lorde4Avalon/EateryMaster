@@ -21,15 +21,6 @@ const restaurant: AppRouteModule = {
       meta: {
         title: t('routes.restaurant.restaurantAll'),
       },
-      // children: [
-      //   {
-      //     path: '/:id',
-      //     name: 'RestaurantDetail',
-      //     meta: {
-      //       title: t('routes.dashboard.restaurantDetail'),
-      //     },
-      //   },
-      // ],
     },
     {
       path: 'add',

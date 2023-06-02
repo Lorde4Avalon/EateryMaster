@@ -11,11 +11,11 @@ const boardApi = '/board'
 
 /**
  * @description: Get board list api
- * @param boardId
+ * @param restaurantId
  */
-export function getBoardListApi(boardId: string) {
+export function getBoardListApi(restaurantId: string) {
   return defHttp.get<GetBoardListResultModel>({
-    url: boardApi + `${boardId}` + `/${PaginationEnum.Page}/${PaginationEnum.Size}`,
+    url: boardApi + `/${restaurantId}` + `/${PaginationEnum.Page}/${PaginationEnum.Size}`,
   })
 }
 

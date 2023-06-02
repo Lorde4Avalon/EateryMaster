@@ -19,6 +19,14 @@ export function getRestaurantListApi() {
 }
 
 /**
+ * @description: Get restaurant by id api
+ * @param restaurantId
+ */
+export function getRestaurantByIdApi(restaurantId: string) {
+  return defHttp.get<RestaurantModel>({ url: restaurantApi, params: { id: restaurantId } })
+}
+
+/**
  * @description: Add restaurant api
  */
 export function addRestaurantApi(params: RestaurantModel) {

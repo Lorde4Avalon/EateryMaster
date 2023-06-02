@@ -1,15 +1,15 @@
 <template>
   <PageWrapper>
     <div class="p-4">
-      <Card title="编辑门店">
+      <Card title="编辑菜品">
         <Form :model="formState" v-bind="layout" name="nest-messages" @finish="onFinish">
-          <FormItem :name="['name']" label="门店名字" :rules="[{ required: true }]">
+          <FormItem :name="['name']" label="菜品名字" :rules="[{ required: true }]">
             <a-input v-model:value="formState.name" />
           </FormItem>
-          <FormItem :name="['address']" label="门店地址">
+          <FormItem :name="['address']" label="菜品地址">
             <a-input v-model:value="formState.address" />
           </FormItem>
-          <FormItem :name="['description']" label="门店介绍">
+          <FormItem :name="['description']" label="菜品介绍">
             <a-textarea v-model:value="formState.description" />
           </FormItem>
           <FormItem :wrapper-col="{ ...layout.wrapperCol, offset: 5 }">

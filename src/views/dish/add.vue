@@ -1,15 +1,15 @@
 <template>
   <PageWrapper>
     <div class="p-4">
-      <Card title="编辑门店">
+      <Card title="添加菜品">
         <Form :model="formState" v-bind="layout" name="nest-messages" @finish="onFinish">
-          <FormItem :name="['name']" label="门店名字" :rules="[{ required: true }]">
+          <FormItem :name="['name']" label="菜品名字" :rules="[{ required: true }]">
             <a-input v-model:value="formState.name" />
           </FormItem>
-          <FormItem :name="['address']" label="门店地址">
-            <a-input v-model:value="formState.address" />
+          <FormItem :name="['price']" label="菜品价格">
+            <a-input v-model:value="formState.price" />
           </FormItem>
-          <FormItem :name="['description']" label="门店介绍">
+          <FormItem :name="['description']" label="菜品介绍">
             <a-textarea v-model:value="formState.description" />
           </FormItem>
           <FormItem :wrapper-col="{ ...layout.wrapperCol, offset: 5 }">
@@ -23,13 +23,11 @@
 <script lang="ts" setup>
   import { Card, Form, FormItem } from 'ant-design-vue'
   import { reactive } from 'vue'
-  import { useRoute, useRouter } from 'vue-router'
-  import { updateRestaurantApi } from '/@/api/restaurant/restaurant'
+  import { useRouter } from 'vue-router'
+  import { addDishApi } from '/@/api/restaurant/dish'
   import { PageWrapper } from '/@/components/Page'
 
-  const route = useRoute()
   const router = useRouter()
-  const { id } = route.params
 
   const layout = {
     labelCol: { span: 5 },
@@ -38,17 +36,16 @@
 
   const formState = reactive({
     name: '',
-    address: '',
+    price: '',
     description: '',
-    image: '',
   })
 
   const onFinish = async (values: any) => {
     try {
-      values.id = id
-      const result = await updateRestaurantApi(values)
+      values.categoryId = router.currentRoute.value.params.id
+      const result = await addDishApi(values)
       console.log('Success:', values, result)
-      router.replace('/restaurant/all')
+      router.back()
     } catch (e) {
       console.log(e)
     }

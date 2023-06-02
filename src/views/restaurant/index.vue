@@ -7,7 +7,7 @@
           <EllipsisOutlined class="cursor-pointer text-lg" key="ellipsis" />
         </div>
       </template>
-      <div v-if="restaurantList.length > 0">
+      <div>
         <Table :columns="columns" :data-source="restaurantList">
           <template #headerCell="{ column }">
             <template v-if="column.key === 'name'">
@@ -44,7 +44,6 @@
           </template>
         </Table>
       </div>
-      <div v-else> no value </div>
     </Card>
   </div>
 </template>
